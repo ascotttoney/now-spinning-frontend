@@ -1,8 +1,6 @@
-import {
-  FETCH_ALBUMS_BEGIN,
-  FETCH_ALBUMS_SUCCESS,
-  FETCH_ALBUMS_FAILURE
-} from "../actions/albumActions";
+import {  FETCH_ALBUMS_BEGIN,
+          FETCH_ALBUMS_SUCCESS,
+          FETCH_ALBUMS_FAILURE } from "../actions/albumActions";
 
 const initialState = {
   data: [],

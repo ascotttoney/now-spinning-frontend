@@ -1,24 +1,17 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  // Switch,
-  // Redirect
-} from "react-router-dom";
-import "./App.css";
-import "bulma/css/bulma.css";
-import AlbumContainer from "./containers/AlbumContainer";
+import "./style.scss";
+import Sidebar from "./components/Sidebar";
+import MainWindow from "./containers/MainWindow";
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Router>
-          <Route exact path="/albums" render={() => <AlbumContainer />} />
-        </Router>
-      </div>
+      <React.Fragment>
+        <div className="columns is-gapless">
+          <Sidebar />
+          <MainWindow />
+        </div>
+      </React.Fragment>
     );
   }
 }
-
-export default App;

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bulma": "^0.7.5",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
@@ -14,6 +15,7 @@
     "redux": "^4.0.4",
     "redux-burger-menu": "^0.2.8",
     "redux-form": "^8.2.4",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {

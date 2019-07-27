@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Album from "../components/Album";
-import AlbumSearchForm from "../components/albumSearchForm";
+import AlbumSearchForm from "../components/AlbumSearchForm";
 import { connect } from "react-redux";
 
 class AlbumContainer extends React.Component {
@@ -12,24 +12,39 @@ class AlbumContainer extends React.Component {
     }
 
     if (loading) {
-      return <div>Loading...</div>;
+      return (
+        <Fragment>
+          <div>
+            <h2 className="title is-2">Search for an album</h2>
+
+            <h4 className="title is-4">
+              Pick from the list <br />
+              View details and add to your collection
+            </h4>
+
+            <AlbumSearchForm handleSubmit={this.submit} />
+
+            <div className="search-results">Patience is a virtue...</div>
+          </div>
+        </Fragment>
+      );
     }
 
     return (
       <Fragment>
-        <div className="container">
-          <h1>
-            Search for an album. Pick from the list. View details and add to
-            your collection.
-          </h1>
+        <div>
+          <h2 className="title is-2">Search for an album</h2>
+
+          <h4 className="title is-4">
+            Pick from the list <br />
+            View details and add to your collection
+          </h4>
 
           <AlbumSearchForm handleSubmit={this.submit} />
 
           <br />
 
-          <h2>Albums Matching Your Query:</h2>
-
-          <div className="album-display">
+          <div className="search-results">
             {albums.map(a => (
               <Album {...a} key={a.id} />
             ))}
@@ -41,9 +56,9 @@ class AlbumContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  albums: state.albumReducer.data,
-  loading: state.albumReducer.loading,
-  error: state.albumReducer.error
+  albums: state.album.data,
+  loading: state.album.loading,
+  error: state.album.error
 });
 
 export default connect(mapStateToProps)(AlbumContainer);

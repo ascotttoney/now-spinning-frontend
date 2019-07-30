@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-// import { checkCurrentUser } from "../actions/userActions";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginPage from "./LoginPage";
-import Home from "./Home";
 import AlbumContainer from "./AlbumContainer";
 import MyCollection from "./MyCollection";
-// let token = localStorage.token
 
 export default class MainWindow extends Component {
   constructor(props) {
@@ -18,15 +15,9 @@ export default class MainWindow extends Component {
 
 // --------------------------------------------------------- //
 
-  // componentDidMount() {
-  //   if (token) checkCurrentUser(token);
-  // }
-
-// --------------------------------------------------------- //
-
   render() {
     return (
-      <div className="column is-four-fifths">
+      <div className="column">
         <div className="main-window">
           <Router>
             {this.state.redirect}
@@ -35,7 +26,7 @@ export default class MainWindow extends Component {
               <Route
                 exact
                 path="/"
-                render={() => (localStorage.token ? <Home /> : <LoginPage />)}
+                render={() => (localStorage.token ? <MyCollection /> : <LoginPage />)}
               />
               <Route exact path="/albums" render={() => <AlbumContainer />} />
               <Route exact path="/collection" render={() => <MyCollection />} />

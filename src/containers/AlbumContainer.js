@@ -7,9 +7,7 @@ class AlbumContainer extends React.Component {
   render() {
     const { error, loading, albums } = this.props;
 
-    if (error) {
-      return <div>Error! {error.message}</div>;
-    }
+    if (error) return <div>Error! {error.message}</div>
 
     if (loading) {
       return (
@@ -17,7 +15,7 @@ class AlbumContainer extends React.Component {
           <div>
             <h2 className="title is-2">Search for an album</h2>
 
-            <h4 className="title is-4">
+            <h4 className="subtitle is-4">
               Pick from the list <br />
               View details and add to your collection
             </h4>
@@ -35,7 +33,7 @@ class AlbumContainer extends React.Component {
         <div>
           <h2 className="title is-2">Search for an album</h2>
 
-          <h4 className="title is-4">
+          <h4 className="subtitle is-4">
             Pick from the list <br />
             View details and add to your collection
           </h4>
@@ -55,7 +53,7 @@ class AlbumContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   albums: state.album.data,
   loading: state.album.loading,
   error: state.album.error

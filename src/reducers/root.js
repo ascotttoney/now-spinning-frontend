@@ -8,13 +8,13 @@ import storage from 'redux-persist/lib/storage'
 const rootPersistConfig = {
   key: "root",
   storage: storage,
-  blacklist: ["album", "form"]
+  blacklist: [ "album", "form" ]
 }
 
 const formPersistConfig = {
   key: "form",
   storage: storage,
-  blacklist: ["albumSearch"]
+  blacklist: [ "login", "albumSearch" ]
 }
 
 const rootReducer = combineReducers({

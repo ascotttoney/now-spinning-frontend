@@ -4,17 +4,17 @@ import { userLogin } from "../actions/userActions";
 
 let LoginForm = (props) => {
   return (
-    <form onSubmit={(e) => {
+    <form className="login-form" onSubmit={(e) => {
         e.preventDefault();
         props.dispatch(userLogin(e.target.email.value, e.target.password.value));
       }}
     >
+      <p className="subtitle is-4">PLEASE LOG IN OR REGISTER</p>
+      <Field name="email" component="input" type="text" placeholder="Email" className="input is-rounded" />
         <br />
-      <Field name="email" component="input" type="text" placeholder="Email" className="login-text-input" />
+      <Field name="password" component="input" type="password" placeholder="Password" className="input is-rounded" />
         <br />
-      <Field name="password" component="input" type="password" placeholder="Password" className="login-text-input" />
-        <br /> <br />
-      <button type="submit" label="submit" className="button">Submit</button>
+      <button className="button is-primary is-rounded" type="submit" label="submit">Submit</button>
     </form>
   );
 };

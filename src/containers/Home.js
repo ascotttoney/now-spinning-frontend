@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { store } from "../store";
+import { connect } from "react-redux";
 
 class Home extends Component {
   submit = values => {
@@ -10,15 +10,24 @@ class Home extends Component {
     return (
       <Fragment>
         <div className="home-page">
-          <h1 className="title is-2">
-            {store.getState().user.userData.first_name} {store.getState().user.userData.last_name}
-          </h1>
-          
-          <h3 className="subtitle is-5">{store.getState().user.userData.email}</h3>
+          <h2 className="title is-2">
+            {this.props.user.first_name} {this.props.user.last_name}
+          </h2>
+
+          <p className="subtitle is-5">{this.props.user.email}</p>
         </div>
+
+        <div className="">
+
+        </div>
+
       </Fragment>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  user: state.user.userData
+})
+
+// export default connect(mapStateToProps)(Home);

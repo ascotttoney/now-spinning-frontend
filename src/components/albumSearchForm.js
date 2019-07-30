@@ -13,7 +13,7 @@ let AlbumSearchForm = (props) => {
         <div className="column is-half">
 
           <div className="control">
-            <Field className="input is-rounded" name="albumquery" component="input"
+            <Field className="input is-rounded a" name="albumquery" component="input"
               type="text" placeholder="SEARCH via artist and/or album title..."
             />
           </div>
@@ -21,7 +21,7 @@ let AlbumSearchForm = (props) => {
         </div>
 
         <div className="column is-one-quarter">
-          <button className="button is-rounded" type="submit">Submit</button>
+          <button className="button is-primary is-rounded" type="submit">Submit</button>
         </div>
       </div>
     </form>

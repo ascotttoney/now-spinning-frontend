@@ -38,46 +38,8 @@ export const userLogin = (email, password) => {
 
 // --------------------------------------------------------- //
 
-// export const checkCurrentUser = (token) => {
-//   console.log("before fetch")
-//
-//   fetch(URL + "profile", {
-//     method: "GET",
-//     headers: { Authorization: token }
-//   })
-//     .then(res => res.json())
-//     .then(json => {
-//       userAuthorized(json.user);
-//       console.log("after fetch", json.user);
-//       return json.user;
-//     });
-// };
-
-// export function checkCurrentUser(token) {
-//   console.log("before fetch")
-//
-//   return dispatch => {
-//     return fetch(URL + "profile", {
-//       method: "GET",
-//       headers: { Authorization: token }
-//     })
-//       .then(res => res.json())
-//       .then(json => {
-//         console.log("after fetch", json.user);
-//         dispatch(userAuthorized(json.user));
-//         return json.user;
-//       });
-//   };
-// };
-
-// --------------------------------------------------------- //
-
 export function loginSuccess(userData) {
   return { type: "USER_LOGIN_SUCCESS", userData }
-};
-
-export function userAuthorized(currentUser) {
-  return { type: "USER_AUTHORIZED", currentUser }
 };
 
 // export function logoutSuccess(currentUser) {

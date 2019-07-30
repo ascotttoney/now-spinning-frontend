@@ -10,9 +10,6 @@ export default (state = initialState, action) => {
     case "USER_AUTHORIZED": {
       return { userData: action.currentUser };
     }
-    // case "USER_LOGOUT_SUCCESS": {
-    //   return { ...state, userData: [] };
-    // }
     default: {
       return state;
     }

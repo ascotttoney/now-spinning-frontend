@@ -20,7 +20,7 @@
     "redux-form": "^8.2.4",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "typescript": "^3.5.3"
   },
   "scripts": {
